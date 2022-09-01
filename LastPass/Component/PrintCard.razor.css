@@ -1,0 +1,29 @@
+﻿body {
+}
+.card {
+    background: #efefef;
+    width: 125px;
+    height: 100px;
+    text-align: center;
+   }
+
+.sub-card {
+    width: 50px;
+    height: 50px;
+}
+
+.card:hover > #box2 {
+    background: #4a5568;
+    position: relative;
+    top: -30px;
+    display: block !important;
+}
+/*cards*/
+/*.card {
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 10px;
+    margin-left: 10px;
+  
+    background-color: white;
+}*/

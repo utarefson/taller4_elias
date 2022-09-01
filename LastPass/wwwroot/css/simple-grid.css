@@ -1,0 +1,205 @@
+/*margenes de los contendores*/
+.app-container, .app-container-fluid {
+    width: 100%;
+   
+}
+.app-row {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+/*Div superior*/
+.app-container {
+    margin: 0 auto;
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: left;
+    
+}
+
+.box {
+    border: 1px dashed gray;
+}
+
+/*letras del lastpass*/
+.LastPass {
+    font-size: 32px;
+    background-color: #D12F2E;
+}
+
+/*contraseña en riesgo*/
+.alert-danger2 {
+    margin: auto;
+    color: red;
+}
+/*modificar eliminar y compartrir las cards*/
+.Edit-card {
+    margin: auto;
+}
+/* css para las columnas  */
+.col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%
+}
+
+.col-1 {
+    flex-basis: 4.166666667%;
+    max-width: 4.166666667%
+
+}
+
+.col-2 {
+    flex-basis: 8.333333333%;
+    max-width: 8.333333333%
+}
+
+.col-3 {
+    flex-basis: 12.5%;
+    max-width: 12.5%;
+    
+}
+
+.col-4 {
+    flex-basis: 16.66666667%;
+    max-width: 16.66666667%;
+    
+}
+
+.col-5 {
+    flex-basis: 20.83333333%;
+    max-width: 20.83333333%;
+    
+}
+
+.col-6 {
+    flex-basis: 25%;
+    max-width: 25%
+}
+
+.col-7 {
+    flex-basis: 29.16666667%;
+    max-width: 29.16666667%
+}
+
+.col-8 {
+    flex-basis: 33.33333333%;
+    max-width: 33.33333333%;
+    background-color: #D12F2E;
+    display: flex;
+}
+
+.col-9 {
+    flex-basis: 37.5%;
+    max-width: 37.5%
+}
+
+.col-10 {
+    flex-basis: 41.66666667%;
+    max-width: 41.66666667%
+}
+
+.col-11 {
+    flex-basis: 45.83333333%;
+    max-width: 45.83333333%
+}
+
+.col-12 {
+    flex-basis: 50%;
+    max-width: 50%;
+    background-color: #D12F2E;
+    display: flex;
+}
+
+.col-13 {
+    flex-basis: 54.16666667%;
+    max-width: 54.16666667%
+}
+
+.col-14 {
+    flex-basis: 58.33333333%;
+    max-width: 58.33333333%;
+  
+}
+
+.col-15 {
+    flex-basis: 62.5%;
+    max-width: 62.5%
+}
+
+.col-16 {
+    flex-basis: 66.66666667%;
+    max-width: 66.66666667%;
+
+}
+
+.col-17 {
+    flex-basis: 70.83333333%;
+    max-width: 70.83333333%
+}
+
+.col-18 {
+    flex-basis: 75%;
+    max-width: 75%
+}
+
+.col-19 {
+    flex-basis: 79.16666667%;
+    max-width: 79.16666667%
+}
+
+.col-20 {
+    flex-basis: 83.33333333%;
+    max-width: 83.33333333%
+}
+
+.col-21 {
+    flex-basis: 87.5%;
+    max-width: 87.5%
+}
+
+.col-22 {
+    flex-basis: 91.66666667%;
+    max-width: 91.66666667%
+}
+
+.col-23 {
+    flex-basis: 95.83333333%;
+    max-width: 95.83333333%
+}
+
+.col-24 {
+    flex-basis: 100%;
+    max-width: 100%;
+    display: flex;
+}
+.col-fit-content {
+    flex-basis: 0;
+    flex-grow: 0;
+    max-width: 100%;
+    display: flex;
+}
+.btn_login {
+    display: inline-block;
+    outline: none;
+    padding: 0px 18px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 25px;
+    background-color: rgb(210, 45, 39);
+    box-shadow: rgb(0 0 0 / 25%) 0px 1px 2px 0px;
+    border: none;
+    cursor: pointer;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    transition: box-shadow 225ms cubic-bezier(0.25, 0.8, 0.25, 1) 0s, border-color 225ms cubic-bezier(0.25, 0.8, 0.25, 1) 0s, background-color 225ms cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
+    width: 100%;
+    position: relative;
+}
