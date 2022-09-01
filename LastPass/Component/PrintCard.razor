@@ -1,0 +1,25 @@
+@using LastPass.Data
+
+
+                
+<div class="card">
+    <div class="sub-card">
+        <div class="card text-dark bg-warning mb-3" style="max-width: 20rem;">
+          <div class="card-body ; "> @NAME </div>
+
+        </div>
+    </div>
+
+    <div class="sub-card" id="box2" style="display: none">
+        <div style="text-align: center; ">
+            <br>
+            <button id="action-btn" onclick="@URL">Iniciar</button>
+        </div>
+    </div>
+</div>
+@code{
+    [Parameter] public string URL { get; set; }
+    [Parameter] public string NAME { get; set; }
+    
+
+}

@@ -1,0 +1,16 @@
+﻿body {
+}
+
+/*button dropdown*/
+.dropdown-toggle {
+    background-color: #D12F2E;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 5px;
+    font-size: 15px;
+    width: 80%;
+}
+
+.dropdown-menu {
+    width: 26%;
+}

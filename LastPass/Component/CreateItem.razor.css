@@ -1,0 +1,16 @@
+﻿body {
+}
+/* css del boton crear servicio*/
+
+.Button-Create {
+    background-color: red;
+    border-radius: 30px;
+    height: 50px;
+    width: 50px;
+    margin-left: 1120px;
+    margin-top: 400px;
+}
+
+.dropdown-menu {
+    width: 26%;
+}
