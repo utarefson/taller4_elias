@@ -4,9 +4,9 @@ using Google.Apis.Services;
 using Google.Apis.Util.Store;
 using LastPass.Data;
 using Newtonsoft.Json;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.Json;
-
 namespace LastPass
 {
     public class GoogleDrive
@@ -35,8 +35,7 @@ namespace LastPass
             });
             return service;
         }
-
-        public string CreateFile(string Name)
+        private string CreateFile(string Name)
         {
             var service = GetService();
             var fileMetadata = new Google.Apis.Drive.v3.Data.File();
@@ -53,10 +52,9 @@ namespace LastPass
             DriveService service = GetService();
             var updatedFileMetadata = new Google.Apis.Drive.v3.Data.File();
             updatedFileMetadata.Name = "googledrive";
-
             FilesResource.UpdateMediaUpload updateRequest;
             string fileId = "1OqjBbMfVGT2dZ-c3QXmAJnlcSY3-Zp0u";
-            using (var stream = new FileStream(@"C:\Users\Elias-Pc\Desktop\TRABAJO\LastPass4 (1)\LastPass4 (1)\LastPass\LastPass\Credentials\googledrive.json", FileMode.OpenOrCreate))
+            using (var stream = new FileStream(@"C:\Users\Elias-Pc\Desktop\LastPass\taller4_elias\LastPass\Credentials\googledrive.json", FileMode.OpenOrCreate))
             {
                 updateRequest = service.Files.Update(updatedFileMetadata, fileId, stream, contentType);
                 updateRequest.Upload();
@@ -66,8 +64,6 @@ namespace LastPass
         }
         public string ReadFile()
         {
-            try
-            {
                 string fileId = "1OqjBbMfVGT2dZ-c3QXmAJnlcSY3-Zp0u";
                 var service = GetService();
                 var request = service.Files.Get(fileId);
@@ -76,29 +72,11 @@ namespace LastPass
                 MemoryStream memstream = stream;
                 string decoded = Encoding.UTF8.GetString(stream.ToArray());
                 return decoded;
-            }
-            catch (Exception e)
-            {
-                if (e is AggregateException)
-                {
-                    return "Credential Not found";
-                }
-                else
-                {
-                    throw;
-                }
-            }
         }
         public void Serializar(List<Model> NewModel )
         {
             var jsonPatientList = JsonConvert.SerializeObject(NewModel);
-            System.IO.File.WriteAllText(@"C:\Users\Elias-Pc\Desktop\TRABAJO\LastPass4 (1)\LastPass4 (1)\LastPass\LastPass\Credentials\googledrive.json", jsonPatientList);
-
+            System.IO.File.WriteAllText(@"C:\Users\Elias-Pc\Desktop\LastPass\taller4_elias\LastPass\Credentials\googledrive.json", jsonPatientList);
         }
-        
-
-
-
-
     }
 }

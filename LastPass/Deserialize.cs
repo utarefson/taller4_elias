@@ -3,9 +3,9 @@ using System.Text.Json;
 
 namespace LastPass
 {
-    public class deserializar
+    public class Deserialize
     {
-        public List<Model> DeserializeJson(string jsonString)
+        public List<Model> GetDeserializeJson(string jsonString)
         {
             List<Model>? userPasswords = JsonSerializer.Deserialize<List<Model>>(jsonString);
             return userPasswords;
