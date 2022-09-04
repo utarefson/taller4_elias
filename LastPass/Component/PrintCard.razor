@@ -1,0 +1,61 @@
+<div class="card">
+    <div class="sub-card">
+        <div class="card-body ;" style="color:deepskyblue; font-size:30px;">@name</div>
+            <div class="card-data ; ">
+                <div>@GetURL()</div>
+                <div> @name</div>
+            </div>
+    </div>
+    <div class="sub-card-hover padding-7" id="box2" style="display: none">
+       <div class="btn-limit-content" style="text-align: center; ">
+            <a class="btn-redirection" href="@GetURL()" target="_blank">
+                <img src="@URL" />
+            </a>
+        </div>
+        <div class="actions-content">
+             <div class="action-btn"@onclick="delete"><i class="fas fa-trash"></i></div>
+             <button class="action-btn" @onclick="@(()=>modal.Show<EditComponent>(""))"><i class="fas fa-edit"></i> </button>
+        </div>
+    </div>
+</div>
+@code{
+    [Parameter] public string URL { get; set; }
+    [Parameter] public int id { get; set; }
+    [Parameter] public string name { get; set; }
+    [Parameter] public string pass { get; set; }
+    [Parameter] public string username { get; set; }
+    public int modelid;
+
+    public int GetModel()
+    {
+        for (int i = 0; i < ListModel.Count; i++)
+        {
+            if (ListModel[i].Id == id)
+            {
+               modelid = ListModel[i].Id;
+            }
+        }
+        return modelid;
+    }
+    
+    private string GetURL(){
+        string uri;
+        if(URL.Length > 15)
+        {
+            uri = URL.Substring(0, URL.Length - 12);
+            return uri;
+        }
+        else{
+            uri = URL;
+        }
+        return uri;
+    }
+
+    private void delete()
+    {
+        this.ListModel = d.GetDeserializeJson(googleDrive.ReadFile());
+        ListModel.RemoveAll(x => x.Id == id);
+        this.googleDrive.Serializar(ListModel);
+        this.googleDrive.UploadFileToDrive();
+    }
+}

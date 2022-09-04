@@ -1,0 +1,52 @@
+@page "/edit"
+<form id="form1" method="post">
+    <div class="container">
+        <div>
+            <h2>URL:</h2>
+            <input @bind-value="URL" />
+        </div>
+        <div>
+            <h2>Name:</h2>
+            <input @bind-value="Name" />
+        </div>
+        <div>
+            <h2>Username:</h2>
+            <input id="User" @bind-value="Username" />
+        </div>
+        <div>
+            <h2>Site password:</h2>
+            <input class="IdImput" @bind-value="Password">Password</input><br />
+        </div>
+        <div class="button-container">
+            <button>Cancel</button>
+            <button>
+                <a class="action-btn" @onclick="Edit" href="/Password">Crear</a>
+            </button>
+        </div>
+    </div>
+</form>
+@code{
+    private int modelid;
+    private string Name;
+    private string Username;
+    private string Password;
+    private string URL;
+    
+    private void Edit()
+    {
+        modelid = printCard.GetModel();
+        this.ListModel = deserialize.GetDeserializeJson(googleDrive.ReadFile());
+        for (int i = 0; i < ListModel.Count; i++)
+            {
+            if (ListModel[i].Id == modelid)
+            {
+                ListModel[i].Name = Name ;
+                ListModel[i].Username = Username;
+                ListModel[i].Password = Password;
+                ListModel[i].URL = URL;
+            }
+        }
+        this.googleDrive.Serializar(ListModel);
+        this.googleDrive.UploadFileToDrive();
+    }
+}

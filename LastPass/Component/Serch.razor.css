@@ -1,0 +1,14 @@
+﻿body {
+}
+
+.vaultSearch {
+    height: 50px;
+    padding-top: 0;
+    padding-bottom: 0;
+    vertical-align: top;
+    border: none;
+    border-radius: 0;
+    font-size: 18px;
+    width: 100%;
+    background-color: #D12F2E;
+}
